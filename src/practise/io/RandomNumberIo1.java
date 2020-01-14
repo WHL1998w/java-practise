@@ -1,18 +1,20 @@
-package practise;
+package practise.io;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @ClassName IOPractise
- * @Description 随机生成100以内的随机数，将其存入本地文件
+ * @Description 随机生成100以内的随机数，将其存入本地文件(原始方法)
  * @Author wanghuanle
  * @Date 2020/1/13
  **/
-public class IOPractise {
+public class RandomNumberIo1 {
     public static void main(String[] args) throws IOException {
         //生成100个0-99之间的数将其放入list集合
         List<Integer> lists = new ArrayList<>();
@@ -32,10 +34,10 @@ public class IOPractise {
             }
             System.out.println("创建成功！");
         } else {
-            FileWriter fileWriter = new FileWriter(file);
-            fileWriter.write(String.valueOf(lists)+"\t");
-            fileWriter.close();
+            Writer writer = new FileWriter(file);
+            writer.write(String.valueOf(lists)+"\t");
+            writer.close();
             System.out.println("写入成功！");
         }
-    }
+   }
 }
